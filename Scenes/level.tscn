@@ -1,3 +1,39 @@
-[gd_scene format=3 uid="uid://c1jtk7c1xd3gw"]
+[gd_scene load_steps=4 format=3 uid="uid://c1jtk7c1xd3gw"]
+
+[ext_resource type="Texture2D" uid="uid://djud5c8570jlw" path="res://Assets/graphics/level/tilesets/level_tilemap.png" id="1_bwwbm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpmnq"]
+texture = ExtResource("1_bwwbm")
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sr6ah"]
+sources/0 = SubResource("TileSetAtlasSource_tpmnq")
 
 [node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_sr6ah")
+format = 2
