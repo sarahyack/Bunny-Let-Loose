@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ld6je42g41r"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_dlvwq"]
+[ext_resource type="Texture2D" uid="uid://cxquwllyvrjha" path="res://Assets/graphics/player/basic/idle.png" id="1_j5w4o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhg0l"]
+radius = 4.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dlvwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_uhg0l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j5w4o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
