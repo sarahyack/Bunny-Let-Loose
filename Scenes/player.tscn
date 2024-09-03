@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://8ld6je42g41r"]
+[gd_scene load_steps=9 format=3 uid="uid://8ld6je42g41r"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dlvwq"]
 [ext_resource type="Texture2D" uid="uid://cxquwllyvrjha" path="res://Assets/graphics/player/basic/idle.png" id="1_j5w4o"]
 [ext_resource type="Texture2D" uid="uid://cqp3h8qx1aflw" path="res://Assets/graphics/player/gun/idle.png" id="3_7mlcv"]
 [ext_resource type="Texture2D" uid="uid://cyyrpyh2uvu26" path="res://Assets/graphics/player/basic/walk.png" id="3_yv4gn"]
 [ext_resource type="Texture2D" uid="uid://cr4rh3esr8lwy" path="res://Assets/graphics/player/gun/walk.png" id="5_j4kmy"]
+[ext_resource type="Texture2D" uid="uid://beiwrqf73bodu" path="res://Assets/graphics/bullet/fire.png" id="6_hlg78"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jonug"]
 animations = [{
@@ -67,7 +68,9 @@ animations = [{
 radius = 5.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_dlvwq")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
@@ -89,4 +92,22 @@ shape = SubResource("CapsuleShape2D_uhg0l")
 wait_time = 0.6
 one_shot = true
 
+[node name="FireTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="FireLeft" type="Sprite2D" parent="Fire"]
+visible = false
+position = Vector2(-10.5, 2)
+texture = ExtResource("6_hlg78")
+flip_h = true
+
+[node name="FireRight" type="Sprite2D" parent="Fire"]
+visible = false
+position = Vector2(10.5, 2)
+texture = ExtResource("6_hlg78")
+
 [connection signal="timeout" from="Timers/ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="Timers/FireTimer" to="." method="_on_fire_timer_timeout"]

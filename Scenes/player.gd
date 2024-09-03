@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var speed := 200
 var direction_x := 0.0
 var facing_right := true
-var has_gun := true
-var can_shoot := true
+var has_gun := false
+var can_shoot := false
 
-signal shoot(pos: Vector2)
+signal shoot(pos: Vector2, direction: bool)
 
 func _process(_delta):
 	# print(Input.get_axis("left", "right"))
@@ -25,9 +25,11 @@ func get_input():
 		velocity.y = -300
 	
 	if Input.is_action_just_pressed("shoot") and can_shoot:
-		shoot.emit(global_position)
+		shoot.emit(global_position, facing_right)
 		can_shoot = false
 		$Timers/ShootTimer.start()
+		$Timers/FireTimer.start()
+		$Fire.get_child(facing_right).show()
 
 func apply_gravity():
 	velocity.y += 20
@@ -49,4 +51,9 @@ func get_animation():
 	$Sprites.flip_h = not facing_right
 
 func _on_shoot_timer_timeout():
-	can_shoot = true
+	if has_gun:
+		can_shoot = true
+
+func _on_fire_timer_timeout():
+	for child in $Fire.get_children():
+		child.hide()
