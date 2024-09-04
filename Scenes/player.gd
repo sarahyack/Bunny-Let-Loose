@@ -9,7 +9,7 @@ var can_shoot := false
 signal shoot(pos: Vector2, direction: bool)
 
 func _process(_delta):
-	# print(Input.get_axis("left", "right"))
+	print(Input.get_axis("left", "right"))
 	get_input()
 	apply_gravity()
 	get_facing_direction()
