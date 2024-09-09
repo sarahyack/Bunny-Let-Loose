@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cidodig3rtb4s"]
+[gd_scene load_steps=10 format=3 uid="uid://cidodig3rtb4s"]
 
 [ext_resource type="Texture2D" uid="uid://dpith5gjeqj2f" path="res://Assets/graphics/Enemies/bee/0.png" id="1_1klw6"]
 [ext_resource type="Script" path="res://Scenes/bee.gd" id="1_dn4lr"]
 [ext_resource type="Shader" path="res://Scenes/flicker.gdshader" id="2_28yyj"]
 [ext_resource type="Texture2D" uid="uid://t0pt6p4rw2kt" path="res://Assets/graphics/Enemies/bee/1.png" id="4_6g4vr"]
+[ext_resource type="AudioStream" uid="uid://crltg3knodxgc" path="res://Assets/audio/shot_01.ogg" id="5_ulyov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ks0q"]
 radius = 58.0345
@@ -50,6 +51,9 @@ shape = SubResource("CapsuleShape2D_cu8r6")
 material = SubResource("ShaderMaterial_67r5r")
 sprite_frames = SubResource("SpriteFrames_ijio6")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ulyov")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
