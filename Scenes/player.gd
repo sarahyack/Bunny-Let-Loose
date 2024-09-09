@@ -67,7 +67,7 @@ func damage(amount):
 			health -= amount
 		var tween = create_tween()
 		tween.tween_property($Sprites, "material:shader_parameter/amount", 1.0, 0.0)
-		tween.tween_property($Sprites, "material:shader_parameter/amount", 0.0, 0.2)
+		tween.tween_property($Sprites, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.2)
 		can_be_hurt = false
 		# print(health)
 		$Timers/HurtTimer.start()
