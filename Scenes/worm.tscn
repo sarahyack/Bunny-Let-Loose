@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk6jgje1qb0t1"]
+[gd_scene load_steps=6 format=3 uid="uid://dk6jgje1qb0t1"]
 
 [ext_resource type="Texture2D" uid="uid://dnoj0v8s12y6n" path="res://Assets/graphics/Enemies/worm/1.png" id="1_ry270"]
+[ext_resource type="Shader" path="res://Scenes/flicker.gdshader" id="1_sepxc"]
 [ext_resource type="Script" path="res://Scenes/worm.gd" id="1_ywlaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ii62d"]
+shader = ExtResource("1_sepxc")
+shader_parameter/color = Color(0.98582, 0.955267, 0.924289, 1)
+shader_parameter/amount = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofmmt"]
 size = Vector2(12, 8)
@@ -12,9 +18,11 @@ collision_mask = 19
 script = ExtResource("1_ywlaa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ii62d")
 texture = ExtResource("1_ry270")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ofmmt")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

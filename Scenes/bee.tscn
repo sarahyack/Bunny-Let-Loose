@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cidodig3rtb4s"]
+[gd_scene load_steps=6 format=3 uid="uid://cidodig3rtb4s"]
 
 [ext_resource type="Texture2D" uid="uid://dpith5gjeqj2f" path="res://Assets/graphics/Enemies/bee/0.png" id="1_1klw6"]
 [ext_resource type="Script" path="res://Scenes/bee.gd" id="1_dn4lr"]
+[ext_resource type="Shader" path="res://Scenes/flicker.gdshader" id="2_28yyj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cu8r6"]
 radius = 3.0
 height = 12.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67r5r"]
+shader = ExtResource("2_28yyj")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
 
 [node name="Bee" type="Area2D"]
 collision_layer = 4
@@ -16,6 +22,8 @@ script = ExtResource("1_dn4lr")
 shape = SubResource("CapsuleShape2D_cu8r6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_67r5r")
 texture = ExtResource("1_1klw6")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
