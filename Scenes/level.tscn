@@ -73,8 +73,10 @@ tile_set = SubResource("TileSet_sr6ah")
 [node name="Player" parent="." instance=ExtResource("2_xbdym")]
 position = Vector2(309, 152)
 
-[node name="Bee" parent="." instance=ExtResource("3_uug4e")]
+[node name="Bee" parent="." node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("3_uug4e")]
 position = Vector2(251, 116)
+marker1 = NodePath("../BeePathPoints/Marker2D")
+marker2 = NodePath("../BeePathPoints/Marker2D2")
 
 [node name="Worm" parent="." instance=ExtResource("5_6b1om")]
 position = Vector2(342, 156)
@@ -85,5 +87,13 @@ position = Vector2(342, 156)
 
 [node name="Gun" parent="Guns" instance=ExtResource("5_idowq")]
 position = Vector2(367, 152)
+
+[node name="BeePathPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="BeePathPoints"]
+position = Vector2(148, 50)
+
+[node name="Marker2D2" type="Marker2D" parent="BeePathPoints"]
+position = Vector2(252, 119)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
