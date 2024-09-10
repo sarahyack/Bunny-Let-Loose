@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://crltg3knodxgc" path="res://Assets/audio/shot_01.ogg" id="5_4e0uc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5h77b"]
+resource_local_to_scene = true
 shader = ExtResource("1_sepxc")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/amount = 0.0

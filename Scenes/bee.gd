@@ -25,7 +25,7 @@ func _process(delta):
 	flip_logic()
 	
 	position += (target.position - position).normalized() * speed * delta
-	
+
 
 # Movement Functions
 
@@ -40,6 +40,7 @@ func get_target():
 		target = marker2
 	else:
 		target = marker1
+
 
 # Status Functions
 

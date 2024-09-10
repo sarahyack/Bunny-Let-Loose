@@ -22,6 +22,7 @@ func _process(_delta):
 	
 	velocity.x = direction_x * speed
 	move_and_slide()
+	check_death()
 
 
 # Movement Functions
@@ -73,6 +74,10 @@ func damage(amount):
 		can_be_hurt = false
 		$Sounds/HurtSound.play()
 		$Timers/HurtTimer.start()
+
+func check_death():
+	if health <= 0:
+		get_tree().quit()
 
 # Signal Functions
 
