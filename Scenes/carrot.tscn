@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4sdicwb277e3"]
+
+[ext_resource type="Texture2D" uid="uid://mcr6ocn447q7" path="res://Assets/graphics/player/items/Carrot Sprite 16x16.png" id="1_8ok8t"]
+[ext_resource type="Script" path="res://Scenes/carrot.gd" id="1_34eut"]
+[ext_resource type="AudioStream" uid="uid://dj5001n4d0y58" path="res://Assets/audio/MI_SFX 04.wav" id="3_im7uk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btk8r"]
+radius = 4.0
+
+[node name="Carrot" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_34eut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_btk8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ok8t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_im7uk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

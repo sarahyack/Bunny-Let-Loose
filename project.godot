@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Bunny Let Loose"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://Assets/graphics/player/gun/idle.png"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -23,6 +27,7 @@ version_control/autoload_on_startup=true
 [global_group]
 
 player=""
+ui=""
 
 [input]
 

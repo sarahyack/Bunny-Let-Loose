@@ -1,0 +1,248 @@
+[gd_scene load_steps=22 format=4 uid="uid://dwyhv6e64r1bi"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_bjbww"]
+[ext_resource type="Texture2D" uid="uid://b36tolybg1j3q" path="res://Assets/graphics/level/tilesets/decoration_tilemap.png" id="1_lcxxk"]
+[ext_resource type="Texture2D" uid="uid://djud5c8570jlw" path="res://Assets/graphics/level/tilesets/level_tilemap.png" id="2_1rw62"]
+[ext_resource type="Texture2D" uid="uid://cxquwllyvrjha" path="res://Assets/graphics/player/basic/idle.png" id="3_87rgu"]
+[ext_resource type="AudioStream" uid="uid://0brtf43hu7bt" path="res://Assets/audio/bg_music.ogg" id="4_ixgq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u236h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scvbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpd6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02x0o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m2rs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2tuc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgixm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qcbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7qjc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iub3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qh83v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbs47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_038dl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7eeg2"]
+texture = ExtResource("1_lcxxk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vw7xv"]
+texture = ExtResource("2_1rw62")
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7acpa"]
+sources/32 = SubResource("TileSetAtlasSource_7eeg2")
+sources/33 = SubResource("TileSetAtlasSource_vw7xv")
+tile_proxies/coords_level = [[26, Vector2i(0, 0)], [30, Vector2i(0, 0)]]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_bjbww")
+
+[node name="BG" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 0.87451, 0.803922, 1)
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="Title" type="MarginContainer" parent="Menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_right = 66.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 30
+
+[node name="Label" type="Label" parent="Menu/Title"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_outline_color = Color(0.00392157, 0.592157, 0.776471, 1)
+theme_override_font_sizes/font_size = 72
+text = "Bunny Let Loose!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -20.0
+offset_right = 20.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Menu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.00392157, 0.592157, 0.776471, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_font_sizes/font_size = 62
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u236h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_scvbk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gpd6e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_02x0o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3m2rs")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_p2tuc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mgixm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5qcbw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a7qjc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_iub3s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qh83v")
+text = "Play"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Menu/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.00392157, 0.592157, 0.776471, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_hover_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u236h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_scvbk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gpd6e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_02x0o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3m2rs")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_p2tuc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mgixm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5qcbw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a7qjc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_iub3s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qh83v")
+text = "Controls"
+
+[node name="Panel" type="Panel" parent="Menu"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rbs47")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -182.0
+offset_bottom = 143.0
+grow_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="Move" type="Label" parent="Menu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
+text = "Placeholder"
+
+[node name="Jump" type="Label" parent="Menu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
+text = "Placeholder"
+
+[node name="Shoot" type="Label" parent="Menu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
+text = "Placeholder"
+
+[node name="Decorations" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Decorations"]
+tile_map_data = PackedByteArray("AAAAABwAIQAAAAIAAAABABwAIQABAAIAAAACABwAIQACAAIAAAAIACEAIQAAAAIAAAAJACEAIQABAAIAAAAKACEAIQACAAIAAABFABsAIQAAAAIAAABGABsAIQABAAIAAABHABsAIQACAAIAAAA5ACEAIQAAAAIAAAA6ACEAIQABAAIAAAA7ACEAIQACAAIAAAAmAB4AIQAAAAIAAAAnAB4AIQABAAIAAAAoAB4AIQACAAIAAAAZACUAIQAAAAIAAAAaACUAIQABAAIAAAAbACUAIQACAAIAAAAAACcAIQAAAAIAAAABACcAIQABAAIAAAACACcAIQACAAIAAAADACcAIQAAAAIAAAAEACcAIQABAAIAAAAFACcAIQACAAIAAAAGACcAIQAAAAIAAAAHACcAIQABAAIAAAAIACcAIQACAAIAAAAJACcAIQAAAAIAAAAKACcAIQABAAIAAAALACcAIQACAAIAAAAMACcAIQAAAAIAAAANACcAIQABAAIAAAAOACcAIQACAAIAAAAPACcAIQAAAAIAAAAQACcAIQABAAIAAAARACcAIQACAAIAAAASACcAIQAAAAIAAAATACcAIQABAAIAAAAUACcAIQACAAIAAAAVACcAIQAAAAIAAAAWACcAIQABAAIAAAAXACcAIQACAAIAAAAYACcAIQAAAAIAAAAZACcAIQABAAIAAAAaACcAIQACAAIAAAAbACcAIQAAAAIAAAAcACcAIQABAAIAAAAdACcAIQACAAIAAAAeACcAIQAAAAIAAAAfACcAIQABAAIAAAAgACcAIQACAAIAAAAhACcAIQAAAAIAAAAiACcAIQABAAIAAAAjACcAIQACAAIAAAAkACcAIQAAAAIAAAAlACcAIQABAAIAAAAmACcAIQACAAIAAABFACcAIQAAAAIAAABGACcAIQABAAIAAABHACcAIQACAAIAAABCACcAIQAAAAIAAABDACcAIQABAAIAAABEACcAIQACAAIAAAA/ACcAIQAAAAIAAABAACcAIQABAAIAAABBACcAIQACAAIAAAA8ACcAIQAAAAIAAAA9ACcAIQABAAIAAAA+ACcAIQACAAIAAAA5ACcAIQAAAAIAAAA6ACcAIQABAAIAAAA7ACcAIQACAAIAAAA2ACcAIQAAAAIAAAA3ACcAIQABAAIAAAA4ACcAIQACAAIAAAAzACcAIQAAAAIAAAA0ACcAIQABAAIAAAA1ACcAIQACAAIAAAAwACcAIQAAAAIAAAAxACcAIQABAAIAAAAyACcAIQACAAIAAAAtACcAIQAAAAIAAAAuACcAIQABAAIAAAAvACcAIQACAAIAAAAqACcAIQAAAAIAAAArACcAIQABAAIAAAAsACcAIQACAAIAAAAnACcAIQAAAAIAAAAoACcAIQABAAIAAAApACcAIQACAAIAAAAgACIAIQAAAAIAAAAhACIAIQABAAIAAAAiACIAIQACAAIAAAAQABsAIQAAAAIAAAARABsAIQABAAIAAAASABsAIQACAAIAAAA0ABkAIQAAAAIAAAA1ABkAIQABAAIAAAA2ABkAIQACAAIAAAA6ABwAIQAAAAIAAAA7ABwAIQABAAIAAAA8ABwAIQACAAIAAAAKAB4AIAAEAAAAAAAKAB8AIAAEAAEAAAAKACAAIAAEAAIAAAABACQAIAAEAAAAAAABACUAIAAEAAEAAAABACYAIAAEAAIAAAAiACEAIAAEAAAAAAAoACYAIAAEAAAAAAA6ACAAIAAEAAAAAAA1ABgAIAAFAAIAAAA1ABYAIAAEAAAAAAA1ABcAIAAEAAEAAAASABoAIAAEAAIAAAASABkAIAAFAAAAAAASABcAIAAEAAAAAAASABgAIAAEAAEAAAAAABsAIAAEAAIAAAAAABoAIAAEAAAAAABHABoAIAAEAAAAAAAaACQAIAAAAAEAAAAmACYAIAAAAAEAAAAnACYAIAABAAAAAAAyACQAIAAEAAAAAAAyACUAIAAEAAEAAAAyACYAIAAEAAIAAAAxACYAIAACAAEAAAAzACYAIAAAAAAAAAA0ACYAIAAAAAIAAAAhACEAIAAAAAIAABARABoAIAAAAAIAABACABsAIAAAAAIAABAIACAAIAAEAAAAAAAJACAAIAAAAAEAAAA7ABsAIAAAAAEAAAA8ABsAIAAAAAIAABA5ACAAIAAAAAIAAAA7ACAAIAAAAAAAAAA6ABsAIAABAAIAABA0ABgAIAABAAEAAAA2ABgAIAAAAAAAAAAnAB0AIAACAAEAAAAmAB0AIAAAAAEAABAQABoAIAAAAAEAABBGABoAIAAAAAEAABBFABoAIAABAAAAAAAlACYAIAABAAEAAAApACYAIAABAAIAABAkACYAIAAAAAIAAAAQACYAIAAAAAIAAAAPACYAIAAEAAAAAAAOACYAIAACAAAAAAANACYAIAAAAAEAABAMACYAIAABAAAAAAADACUAIAAEAAAAAAADACYAIAAEAAIAAAACACYAIAAEAAAAAAAVACQAIAAFAAAAAAAVACUAIAAEAAEAAAAVACYAIAAEAAIAAAAVACEAIAAFAAIAAAAVACIAIAADAAEAAAAVACMAIAAEAAEAAAAVACAAIAAEAAAAAAAWACMAIAAEAAAAAAAWACUAIAAFAAAAAAAWACYAIAAEAAIAAAAWACQAIAAEAAEAAAATACQAIAAEAAAAAAATACUAIAAEAAEAAAATACYAIAAEAAIAAAAUACYAIAAEAAAAAAAXACYAIAAAAAEAAAASACYAIAAAAAEAABAoAB0AIAABAAIAAAAgACEAIAABAAIAABA+AAAAIAABAAIAACAHAAAAIAABAAIAADAIAAAAIAAAAAIAACATAAAAIAAAAAIAACAxAAAAIAAAAAIAADADAAAAIAAAAAIAADArAAAAIAAAAAIAADBDAAAAIAAAAAIAACA2AAAAIAABAAIAADAoAAAAIAABAAIAADAQAAAAIAABAAIAADAAAAAAIAABAAIAADBHAAAAIAABAAIAACA=")
+tile_set = SubResource("TileSet_7acpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations"]
+position = Vector2(149, 617)
+texture = ExtResource("3_87rgu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ixgq4")
+volume_db = -16.865
+autoplay = true
+
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]

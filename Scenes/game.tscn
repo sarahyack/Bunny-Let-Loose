@@ -26,3 +26,5 @@ stream = ExtResource("3_j84v7")
 volume_db = -11.243
 autoplay = true
 parameters/looping = true
+
+[connection signal="won" from="UI" to="Level" method="_on_ui_won"]
