@@ -28,7 +28,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qh83v"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbs47"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjqv4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.00392157, 0.592157, 0.776471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_038dl"]
 
@@ -132,8 +142,14 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="Menu/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Menu/VBoxContainer/MarginContainer"]
+[node name="Play" type="Button" parent="Menu/VBoxContainer/MarginContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer2/Controls")
+focus_neighbor_top = NodePath("../../MarginContainer2/Controls")
+focus_neighbor_right = NodePath("../../MarginContainer2/Controls")
+focus_neighbor_bottom = NodePath("../../MarginContainer2/Controls")
+focus_next = NodePath("../../MarginContainer2/Controls")
+focus_previous = NodePath("../../MarginContainer2/Controls")
 theme_override_colors/font_disabled_color = Color(0.00392157, 0.592157, 0.776471, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0.643137, 0.509804, 1)
@@ -158,8 +174,14 @@ text = "Play"
 [node name="MarginContainer2" type="MarginContainer" parent="Menu/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Menu/VBoxContainer/MarginContainer2"]
+[node name="Controls" type="Button" parent="Menu/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/Play")
+focus_neighbor_top = NodePath("../../MarginContainer/Play")
+focus_neighbor_right = NodePath("../../MarginContainer/Play")
+focus_neighbor_bottom = NodePath("../../MarginContainer/Play")
+focus_next = NodePath("../../MarginContainer/Play")
+focus_previous = NodePath("../../MarginContainer/Play")
 theme_override_colors/font_disabled_color = Color(0.00392157, 0.592157, 0.776471, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_hover_color = Color(0.85098, 0.643137, 0.509804, 1)
@@ -183,50 +205,55 @@ text = "Controls"
 
 [node name="Panel" type="Panel" parent="Menu"]
 visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_rbs47")
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjqv4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Panel"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -182.0
-offset_bottom = 143.0
-grow_horizontal = 0
-theme_override_constants/separation = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 120.0
+offset_right = 91.0
+offset_bottom = 277.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Move" type="Label" parent="Menu/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
 text = "Placeholder"
+horizontal_alignment = 1
 
 [node name="Jump" type="Label" parent="Menu/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
 text = "Placeholder"
+horizontal_alignment = 1
 
 [node name="Shoot" type="Label" parent="Menu/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.172549, 0.772549, 0.964706, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_outline_color = Color(0.85098, 0.643137, 0.509804, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxEmpty_038dl")
 text = "Placeholder"
+horizontal_alignment = 1
 
 [node name="Decorations" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -244,5 +271,5 @@ stream = ExtResource("4_ixgq4")
 volume_db = -16.865
 autoplay = true
 
-[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer2/Controls" to="." method="_on_controls_pressed"]

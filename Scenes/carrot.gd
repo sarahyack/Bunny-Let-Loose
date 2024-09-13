@@ -13,5 +13,6 @@ func _on_body_entered(_body):
 	update_carrot.emit()
 	$AudioStreamPlayer2D.play()
 	$Sprite2D.hide()
+	$CollisionShape2D.set_deferred("disabled", true)
 	await $AudioStreamPlayer2D.finished
 	queue_free()

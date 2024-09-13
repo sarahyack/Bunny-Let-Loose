@@ -1,3 +1,165 @@
-[gd_scene format=3 uid="uid://mudh8suc7si8"]
+[gd_scene load_steps=18 format=3 uid="uid://mudh8suc7si8"]
 
-[node name="Pause" type="Node"]
+[ext_resource type="Script" path="res://Scenes/pause.gd" id="1_370hp"]
+[ext_resource type="Texture2D" uid="uid://dnoj0v8s12y6n" path="res://Assets/graphics/Enemies/worm/1.png" id="1_r3j4g"]
+[ext_resource type="Texture2D" uid="uid://mtprgrjlr51q" path="res://Assets/graphics/Enemies/worm/0.png" id="2_jctr6"]
+
+[sub_resource type="Animation" id="Animation_wo5vl"]
+resource_name = "Pause"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation/MarginContainer/VBoxContainer/Worm:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_r3j4g"), ExtResource("2_jctr6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation/MarginContainer/VBoxContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.3, 0.566667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Paused", "Paused . ", "Paused . . ", "Paused . . ."]
+}
+
+[sub_resource type="Animation" id="Animation_rvlki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation/MarginContainer/VBoxContainer/Worm:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_r3j4g")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation/MarginContainer/VBoxContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Paused . . ."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4v54t"]
+_data = {
+"Pause": SubResource("Animation_wo5vl"),
+"RESET": SubResource("Animation_rvlki")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8t72p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5i4ek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obcb7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dguxm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5ewx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_315dt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sy2fp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8obnf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u4uu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uokoy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8i7d"]
+
+[node name="Pause" type="CanvasLayer" groups=["pause"]]
+visible = false
+script = ExtResource("1_370hp")
+
+[node name="Animation" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Animation"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Animation/MarginContainer"]
+layout_mode = 2
+
+[node name="Worm" type="TextureRect" parent="Animation/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 72)
+layout_mode = 2
+texture = ExtResource("1_r3j4g")
+
+[node name="Label" type="Label" parent="Animation/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_font_sizes/font_size = 24
+text = "Paused . . ."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4v54t")
+}
+autoplay = "Pause"
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -67.0
+offset_right = 93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="Button" type="Button" parent="Buttons/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0.172549, 0.772549, 0.964706, 1)
+theme_override_colors/font_focus_color = Color(0.85098, 0.643137, 0.509804, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8t72p")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5i4ek")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_obcb7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dguxm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s5ewx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_315dt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sy2fp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8obnf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4u4uu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_uokoy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x8i7d")
+text = "Resume"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Buttons/MarginContainer/Button" to="." method="_on_button_pressed"]

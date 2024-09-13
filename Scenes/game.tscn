@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5je1cuflhg4l"]
+[gd_scene load_steps=5 format=3 uid="uid://b5je1cuflhg4l"]
 
 [ext_resource type="PackedScene" uid="uid://c1jtk7c1xd3gw" path="res://Scenes/level.tscn" id="1_k1hc6"]
 [ext_resource type="PackedScene" uid="uid://bcpff84qdljyg" path="res://Scenes/ui.tscn" id="2_gmfqu"]
 [ext_resource type="AudioStream" uid="uid://0brtf43hu7bt" path="res://Assets/audio/bg_music.ogg" id="3_j84v7"]
+[ext_resource type="PackedScene" uid="uid://mudh8suc7si8" path="res://Scenes/pause.tscn" id="4_l7m24"]
 
 [node name="Game" type="Node"]
 
 [node name="BG" type="CanvasLayer" parent="."]
+process_mode = 3
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="BG"]
@@ -18,6 +20,7 @@ grow_vertical = 2
 color = Color(0.988235, 0.87451, 0.803922, 1)
 
 [node name="Level" parent="." instance=ExtResource("1_k1hc6")]
+process_mode = 1
 
 [node name="UI" parent="." instance=ExtResource("2_gmfqu")]
 
@@ -27,4 +30,8 @@ volume_db = -11.243
 autoplay = true
 parameters/looping = true
 
+[node name="Pause" parent="." instance=ExtResource("4_l7m24")]
+process_mode = 2
+
 [connection signal="won" from="UI" to="Level" method="_on_ui_won"]
+[connection signal="resume" from="Pause" to="Level" method="_on_pause_resume"]
