@@ -2,10 +2,14 @@ extends Node
 
 var main_game: PackedScene = load("res://Scenes/game.tscn")
 var menu_scene: PackedScene = load("res://Scenes/main_menu.tscn")
+var won := true
 
 # TODO: Last Step: Make sure that the game handles Losing as well.
 
 func _ready():
+	if not won:
+		$Main/VBoxContainer/Label.text = "You Lost ..."
+	
 	if Input.get_connected_joypads().size() != 0:
 		$Bottom/MarginContainer/Button.grab_focus()
 

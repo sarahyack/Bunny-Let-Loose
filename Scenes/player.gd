@@ -7,10 +7,11 @@ var direction_x := 0.0
 var facing_right := true
 var has_gun := false
 var can_shoot := false
+var button_tap := false
 var can_be_hurt := true
 
 signal shoot(pos: Vector2, direction: bool)
-
+signal dead()
 
 # Main Functions
 
@@ -24,6 +25,15 @@ func _process(_delta):
 	move_and_slide()
 	check_death()
 
+func _input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		var touch_pos = event.position
+		var ui = get_tree().get_first_node_in_group("ui")
+		
+		if ui.is_tap_on_button(touch_pos):
+			button_tap = true
+		else:
+			button_tap = false
 
 # Movement Functions
 
@@ -34,7 +44,7 @@ func get_input():
 		velocity.y = -300
 		$Sounds/JumpSound.play()
 	
-	if Input.is_action_just_pressed("shoot") and can_shoot:
+	if Input.is_action_just_pressed("shoot") and can_shoot and not button_tap:
 		shoot.emit(global_position, facing_right)
 		can_shoot = false
 		$Timers/ShootTimer.start()
@@ -77,7 +87,7 @@ func damage(amount):
 
 func check_death():
 	if health <= 0:
-		get_tree().quit()
+		dead.emit()
 
 # Signal Functions
 

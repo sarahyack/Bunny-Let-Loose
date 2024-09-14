@@ -1,8 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcpff84qdljyg"]
+[gd_scene load_steps=16 format=3 uid="uid://bcpff84qdljyg"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_8wumn"]
 [ext_resource type="Texture2D" uid="uid://mcr6ocn447q7" path="res://Assets/graphics/player/items/Carrot Sprite 16x16.png" id="2_bk8vy"]
 [ext_resource type="Texture2D" uid="uid://o8d32gd4adbg" path="res://Assets/graphics/player/items/largeShroom.png" id="3_lf1j1"]
+[ext_resource type="Texture2D" uid="uid://w4v6tjsofvg2" path="res://Assets/graphics/controls/leftCtrl.png" id="4_m8mun"]
+[ext_resource type="Texture2D" uid="uid://br06chdducco7" path="res://Assets/graphics/controls/leftCtrldark.png" id="5_djlh8"]
+[ext_resource type="Texture2D" uid="uid://bp5c01vh1nsly" path="res://Assets/graphics/controls/rightCtrl.png" id="6_ucnqi"]
+[ext_resource type="Texture2D" uid="uid://b3w35gk08s85s" path="res://Assets/graphics/controls/rightCtrldark.png" id="7_ro4kx"]
+[ext_resource type="Texture2D" uid="uid://bsjehn2lds0hh" path="res://Assets/graphics/controls/jumpCtrl.png" id="8_l2omb"]
+[ext_resource type="Texture2D" uid="uid://dfj0v2xosqeo3" path="res://Assets/graphics/controls/jumpCtrldark.png" id="9_b0h0l"]
+[ext_resource type="Texture2D" uid="uid://dur2a8u31eb2g" path="res://Assets/graphics/controls/quitCtrl.png" id="10_bkbhb"]
+[ext_resource type="Texture2D" uid="uid://dvkmxkfesw54h" path="res://Assets/graphics/controls/quitCtrldark.png" id="11_k7hvu"]
+[ext_resource type="Texture2D" uid="uid://d0v2wepelgfpg" path="res://Assets/graphics/controls/pauseCtrl.png" id="12_847gi"]
+[ext_resource type="Texture2D" uid="uid://io30ebd6fo6v" path="res://Assets/graphics/controls/pauseCtrldark.png" id="13_7nr1k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62xvm"]
 bg_color = Color(0.213543, 0.14116, 0.0746892, 1)
@@ -76,3 +86,63 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0.643137, 0.509804, 1)
 theme_override_colors/font_outline_color = Color(0.00392157, 0.592157, 0.776471, 1)
 text = "0/5"
+
+[node name="MovementCtrlButtons" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+size_flags_vertical = 0
+
+[node name="LeftButton" type="TouchScreenButton" parent="MovementCtrlButtons"]
+position = Vector2(32, -120)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_m8mun")
+texture_pressed = ExtResource("5_djlh8")
+passby_press = true
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="MovementCtrlButtons"]
+position = Vector2(184, -120)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("6_ucnqi")
+texture_pressed = ExtResource("7_ro4kx")
+passby_press = true
+action = "right"
+
+[node name="Jump" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="JumpButton" type="TouchScreenButton" parent="Jump"]
+position = Vector2(-142, -146)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("8_l2omb")
+texture_pressed = ExtResource("9_b0h0l")
+action = "jump"
+
+[node name="MenuButtons" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="QuitButton" type="TouchScreenButton" parent="MenuButtons"]
+position = Vector2(10, 10)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("10_bkbhb")
+texture_pressed = ExtResource("11_k7hvu")
+
+[node name="PauseButton" type="TouchScreenButton" parent="MenuButtons"]
+position = Vector2(120, 10)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("12_847gi")
+texture_pressed = ExtResource("13_7nr1k")
+action = "back"

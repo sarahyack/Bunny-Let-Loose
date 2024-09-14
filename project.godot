@@ -29,6 +29,7 @@ version_control/autoload_on_startup=true
 player=""
 ui=""
 pause=""
+game_over=""
 
 [input]
 
@@ -71,6 +72,10 @@ back={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 

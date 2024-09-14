@@ -88,7 +88,7 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m43d3"]
 
-[node name="GameOver" type="Node"]
+[node name="GameOver" type="Node" groups=["game_over"]]
 script = ExtResource("1_civiw")
 
 [node name="BG" type="CanvasLayer" parent="."]
@@ -182,7 +182,7 @@ text = "Play Again?"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f3jlr")
-volume_db = -4.685
+volume_db = -10.307
 autoplay = true
 
 [connection signal="pressed" from="Bottom/MarginContainer/Button" to="." method="_on_button_pressed"]

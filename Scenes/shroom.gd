@@ -11,7 +11,6 @@ func _ready():
 # Signal Functions
 
 func _on_body_entered(_body):
-	print("Collision Detected")
 	update_shrooms.emit()
 	$AudioStreamPlayer2D.play()
 	$Sprite2D.hide()
