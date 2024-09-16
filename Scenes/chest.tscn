@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dj5001n4d0y58" path="res://Assets/audio/MI_SFX 04.wav" id="3_2witk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbel2"]
+size = Vector2(26, 20)
 
 [node name="Chest" type="Area2D"]
 collision_layer = 8

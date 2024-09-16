@@ -30,9 +30,7 @@ func is_tap_on_button(touch_position) -> bool:
 	var buttons = [$MovementCtrlButtons/LeftButton, $MovementCtrlButtons/RightButton, $Jump/JumpButton, $MenuButtons/QuitButton, $MenuButtons/PauseButton]
 	
 	for button in buttons:
-		var global_position = button.get_global_transform().origin
-		var size = button.texture_normal.get_size() * button.scale
-		var button_rect = Rect2(global_position - size / 2, size)
+		var button_rect = Rect2(button.global_position, button.shape.get_size())
 		if button_rect.has_point(touch_position):
 			return true
 	

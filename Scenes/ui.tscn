@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcpff84qdljyg"]
+[gd_scene load_steps=21 format=3 uid="uid://bcpff84qdljyg"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_8wumn"]
 [ext_resource type="Texture2D" uid="uid://mcr6ocn447q7" path="res://Assets/graphics/player/items/Carrot Sprite 16x16.png" id="2_bk8vy"]
@@ -19,6 +19,21 @@ bg_color = Color(0.213543, 0.14116, 0.0746892, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6jay"]
 bg_color = Color(0.862745, 0.203922, 0.223529, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy632"]
+size = Vector2(75, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w7fx"]
+size = Vector2(75, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogeca"]
+size = Vector2(75, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t8ds"]
+size = Vector2(50, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns6qy"]
+size = Vector2(50, 60)
 
 [node name="UI" type="CanvasLayer" groups=["ui"]]
 script = ExtResource("1_8wumn")
@@ -99,6 +114,7 @@ position = Vector2(32, -120)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("4_m8mun")
 texture_pressed = ExtResource("5_djlh8")
+shape = SubResource("RectangleShape2D_vy632")
 passby_press = true
 action = "left"
 
@@ -107,6 +123,7 @@ position = Vector2(184, -120)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("6_ucnqi")
 texture_pressed = ExtResource("7_ro4kx")
+shape = SubResource("RectangleShape2D_2w7fx")
 passby_press = true
 action = "right"
 
@@ -126,6 +143,7 @@ position = Vector2(-142, -146)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("8_l2omb")
 texture_pressed = ExtResource("9_b0h0l")
+shape = SubResource("RectangleShape2D_ogeca")
 action = "jump"
 
 [node name="MenuButtons" type="MarginContainer" parent="."]
@@ -139,10 +157,12 @@ position = Vector2(10, 10)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("10_bkbhb")
 texture_pressed = ExtResource("11_k7hvu")
+shape = SubResource("RectangleShape2D_0t8ds")
 
 [node name="PauseButton" type="TouchScreenButton" parent="MenuButtons"]
 position = Vector2(120, 10)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("12_847gi")
 texture_pressed = ExtResource("13_7nr1k")
+shape = SubResource("RectangleShape2D_ns6qy")
 action = "back"
