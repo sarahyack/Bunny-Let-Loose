@@ -4,7 +4,14 @@ _Play as a Bunny, find your gun, defend yourself, and collect the carrots and mu
 
 ## **Table of Contents**
 
-
+<!-- TOC -->
+* [**Bunny Let Loose**](#bunny-let-loose)
+  * [**Table of Contents**](#table-of-contents)
+  * [**Overview**](#overview)
+  * [**Getting Started**](#getting-started)
+  * [**Gameplay**](#gameplay)
+  * [**Future Plans**](#future-plans)
+<!-- TOC -->
 
 ## **Overview**
 _Created for the [Godot Platformer Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jTpR5D2z-xy7YRnWh9xnFM)_
@@ -41,58 +48,19 @@ Since the project can run on Android, and was built using Mobile compatibility s
 And with that, you should be good to go!
 
 ## **Gameplay**
-_Describe the gameplay and key mechanics of the game._
+_A simple one-level action-platformer featuring a bunny with a gun._
 
-**Thinking Points:**
-- What does the player do?
-- Are there any levels, power-ups, or unique challenges?
-- Include screenshots or GIFs to visually showcase the gameplay.
+As of right now, the gameplay consists of just one level with various collectibles and enemies scattered around the map. Find your gun, defend yourself and collect the vegetables the Bunny wants.
 
-## **Features**
-_A list of the main features of the game._
+Supported Inputs: Keyboard/Mouse, Joypad (Note: instructions default to Xbox button labels), as well as on-screen button controls for Mobile. 
 
-**Thinking Points:**
-- What makes your game interesting or fun?
-- Are there any upcoming features or ideas you’re planning to add?
-- Highlight any innovative mechanics or systems.
-
-## **Installation**
-_Instructions on how to install and run the game._
-
-**Thinking Points:**
-- Is the game available on multiple platforms?
-- Include instructions for different operating systems (Windows, macOS, Linux).
-- Provide details on how to build the game from source if applicable.
-
-## **Contributing**
-_Guidelines for how others can contribute to your project._
-
-**Thinking Points:**
-- What coding standards or practices should contributors follow?
-- How should issues or bugs be reported?
-- What areas of the project are open for contribution?
-- Are there any contribution guidelines or a code of conduct?
-
-## **License**
-_Information about the license under which the project is distributed._
-
-**Thinking Points:**
-- What open-source license are you using (e.g., MIT, GPL)?
-- Do contributors need to sign a contributor license agreement (CLA)?
-
-## **Contact**
-_How can users or contributors get in touch with you?_
-
-**Thinking Points:**
-- Provide your preferred contact method (email, social media, Discord).
-- Link to any community forums or discussion groups related to the project.
+For any future plans, please refer to [Future Plans](#future-plans) 
 
 ## **Future Plans**
-_Outline any future updates or expansions you have planned for the project._
+_Currently, I have no plans to develop this any further._
 
-**Thinking Points:**
-- What are your long-term goals for the game?
-- Are there any features or content you want to add later?
-- How do you plan to gather and incorporate user feedback?
+As this was a simple tutorial project for me, I have no plans to develop this further as I'm moving on to create my own games from this point. Aside from any polish I desire to add to this one level, I have nothing further I wish to contribute to it. However, you are very welcome to do what you like with it!
+
+As always, thank you for checking out my repository and have a wonderful day!
 
 ---
