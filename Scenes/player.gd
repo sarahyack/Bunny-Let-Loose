@@ -27,10 +27,9 @@ func _process(_delta):
 
 func _input(event):
 	if event is InputEventScreenTouch and event.pressed:
-		var touch_pos = event.position
 		var ui = get_tree().get_first_node_in_group("ui")
 		
-		if ui.is_tap_on_button(touch_pos):
+		if ui.is_tap_on_button():
 			button_tap = true
 		else:
 			button_tap = false

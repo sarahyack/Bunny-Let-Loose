@@ -26,12 +26,11 @@ func update_carrots():
 func update_shrooms():
 	current_shrooms += 1
 
-func is_tap_on_button(touch_position) -> bool:
+func is_tap_on_button() -> bool:
 	var buttons = [$MovementCtrlButtons/LeftButton, $MovementCtrlButtons/RightButton, $Jump/JumpButton, $MenuButtons/QuitButton, $MenuButtons/PauseButton]
 	
 	for button in buttons:
-		var button_rect = Rect2(button.global_position, button.shape.get_size())
-		if button_rect.has_point(touch_position):
+		if button.is_pressed():
 			return true
 	
 	return false
@@ -42,3 +41,6 @@ func check_if_won():
 
 func on_player_dead():
 	lost.emit()
+
+func _on_quit_button_pressed():
+	get_tree().quit()
