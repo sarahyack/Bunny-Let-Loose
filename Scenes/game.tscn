@@ -24,6 +24,8 @@ process_mode = 1
 
 [node name="UI" parent="." instance=ExtResource("2_gmfqu")]
 process_mode = 3
+max_carrots = 10
+max_shrooms = 18
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_j84v7")
